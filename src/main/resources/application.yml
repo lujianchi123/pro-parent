@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
+spring:
+  datasource:
+    username: root
+    password: admin
+    url: jdbc:mysql://localhost:3306/jankytest?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/view/
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
